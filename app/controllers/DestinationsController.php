@@ -1,5 +1,5 @@
 <?php
-// app/controllers/UserController.php
+// app/controllers/DestinasiController.php
 require_once '../app/models/Destinations.php';
 
 class DestinasiController {
@@ -27,9 +27,9 @@ class DestinasiController {
         $this->destinasiModel->add($nama_destinasi, $lokasi, $deskripsi, $harga_tiket);
         header('Location: /destinasi/index');
     }
-    // Show the edit form with the user data
+    // Show the edit form with the destinations data
     public function edit($id_destinasi) {
-        $destinasi = $this->destinasiModel->find($id_destinasi); // Assume find() gets user by ID
+        $destinasi = $this->destinasiModel->find($id_destinasi); // Assume find() gets destinations by ID
         require_once __DIR__ . '/../views/destinations/edit.php';
     }
 
@@ -37,7 +37,7 @@ class DestinasiController {
     public function update($id_destinasi, $data) {
         $updated = $this->destinasiModel->update($id_destinasi, $data);
         if ($updated) {
-            header("Location: /destinasi/index"); // Redirect to user list
+            header("Location: /destinasi/index"); // Redirect to destinations list
         } else {
             echo "Failed to update user.";
         }
