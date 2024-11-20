@@ -1,4 +1,4 @@
-<!-- app/views/user/index.php -->
+<!-- app/views/destinations/index.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
