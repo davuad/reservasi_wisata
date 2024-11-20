@@ -1,4 +1,4 @@
-<!-- app/views/user/create.php -->
+<!-- app/views/destinasi/create.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
