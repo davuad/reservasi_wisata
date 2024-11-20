@@ -30,7 +30,7 @@ class Destinasi {
         return $query->execute();
     }
 
-    // Update user data by ID
+    // Update destinasi data by ID
     public function update($id_destinasi, $data) {
         $query = "UPDATE destinations SET nama_destinasi = :nama_destinasi, lokasi = :lokasi, deskripsi = :deskripsi, harga_tiket = :harga_tiket WHERE id_destinasi = :id_destinasi";
         $stmt = $this->db->prepare($query);
@@ -42,7 +42,7 @@ class Destinasi {
         return $stmt->execute();
     }
 
-    // Delete user by ID
+    // Delete destinasi by ID
     public function delete($id_destinasi) {
         $query = "DELETE FROM destinations WHERE id_destinasi = :id_destinasi";
         $stmt = $this->db->prepare($query);
