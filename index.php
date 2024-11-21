@@ -1,5 +1,5 @@
 <?php
-require_once 'controller/ReservationController.php';
+require_once 'app/controllers/ReservationController.php';
 
 try {
     // Koneksi ke database
@@ -9,7 +9,7 @@ try {
     die("Koneksi gagal: " . $e->getMessage());
 }
 
-$controller = new ReservationController($database);
+$controller = new ReservationController();
 
 $action = $_GET['action'] ?? 'index';
 $id = $_GET['id'] ?? null;
@@ -18,11 +18,14 @@ switch ($action) {
     case 'index':
         $controller->index();
         break;
-    case 'show':
-        $controller->show($id);
-        break;
     case 'create':
         $controller->create();
+        break;
+    case 'store':
+        $controller->store();
+        break;
+    case 'edit':
+        $controller->edit($id);
         break;
     case 'update':
         $controller->update($id);

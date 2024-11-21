@@ -1,5 +1,4 @@
 <?php
-// config/database.php
 class Database {
     private $host = '160.19.166.42';
     private $db_name = '2D_klp5';
@@ -18,3 +17,4 @@ class Database {
         return $this->conn;
     }
 }
+?>
