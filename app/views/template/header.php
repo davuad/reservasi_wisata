@@ -1,8 +1,4 @@
 <!-- app/views/template/header.php -->
-<?php
-// $base_url = 'http://localhost/reservasi_wisata';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +19,7 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="#">Home</a>
+                    <a class="nav-link active" href="/">Home</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/destinasi">Destinasi</a>

@@ -2,8 +2,8 @@
 <?php
 require_once __DIR__ . '/../template/header.php';
 ?>
-    <div class="container mt-5">
-        <h2 class="mb-4">Data Reservasi</h2>
+    <div class="container mt-3 my-5">
+        <h2 class="mb-4 text-center">Data Reservasi</h2>
         <a href="/reservasi/create" class="btn btn-primary mb-3">Tambah Reservasi Baru</a>
         <div class="table-responsive">
             <table class="table table-striped table-bordered">
@@ -24,8 +24,8 @@ require_once __DIR__ . '/../template/header.php';
                         <tr>
                             <td><?= $no++; ?></td>
                             <td><?= htmlspecialchars($reservasi['reservation_id']) ?></td>
-                            <td><?= htmlspecialchars($reservasi['user_name']) ?></td>
-                            <td><?= htmlspecialchars($reservasi['destination_name']) ?></td>
+                            <td><?= htmlspecialchars($reservasi['nama_pengguna']) ?></td>
+                            <td><?= htmlspecialchars($reservasi['nama_destinasi']) ?></td>
                             <td><?= htmlspecialchars($reservasi['tgl_reservasi']) ?></td>
                             <td><?= htmlspecialchars($reservasi['status_pembayaran']) ?></td>
                             <td>

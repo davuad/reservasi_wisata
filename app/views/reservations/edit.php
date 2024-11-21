@@ -2,29 +2,32 @@
 <?php
 require_once __DIR__ . '/../template/header.php';
 ?>
-    <div class="container mt-5">
+    <div class="container mt-3 my-4">
         <div class="row justify-content-center">
             <div class="col-md-8">
-                <div class="card">
+                <div class="card mb-4">
                     <div class="card-header bg-secondary text-white text-center">
                         <h3 class="mb-0">Edit Reservasi</h3>
                     </div>
                     <div class="card-body">
                         <form action="/reservasi/update/<?php echo $reservasi['reservation_id']; ?>" method="POST">
                             <div class="mb-3">
-                                <label for="user_id" class="form-label">Pilih User:</label>
-                                 <select name="user_id" id="user_id" required>
-                                    <option value="">-- Pilih User --</option>
+                                <label for="user_id" class="form-label">Nama Pengguna</label>
+                                <select name="user_id" class="form-select" required>
                                     <?php foreach ($users as $user): ?>
-                                        <option value="<?= htmlspecialchars($user['id_users']) ?>"><?= htmlspecialchars($user['nama']) ?></option>
+                                        <option value="<?= $user['id_users'] ?>" <?= $user['id_users'] == $reservasi['user_id'] ? 'selected' : '' ?>><?= htmlspecialchars($user['nama']) ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <select name="destination_id" id="destination_id" required>
+                                <label for="destination_id" class="form-label">Nama Destinasi</label>
+                                <select name="destination_id" class="form-select" required>
                                     <option value="">-- Pilih Destinasi --</option>
-                                    <?php foreach ($destinasi as $destination): ?>
-                                        <option value="<?= htmlspecialchars($destination['id_destinasi']) ?>"><?= htmlspecialchars($destination['nama_destinasi']) ?></option>
+                                    <?php foreach ($destinations as $destination): ?>
+                                        <option value="<?= $destination['id_destinasi'] ?>" 
+                                            <?= $destination['id_destinasi'] == $reservasi['destination_id'] ? 'selected' : '' ?>>
+                                            <?= htmlspecialchars($destination['nama_destinasi']) ?>
+                                        </option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>
