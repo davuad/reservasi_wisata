@@ -1,4 +1,3 @@
-<!-- app/views/reservations/edit.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,12 +17,20 @@
                     <div class="card-body">
                         <form action="/reservasi/update/<?php echo $reservasi['reservation_id']; ?>" method="POST">
                             <div class="mb-3">
-                                <label for="user_id" class="form-label">ID Pengguna</label>
-                                <input type="number" name="user_id" value="<?php echo htmlspecialchars($reservasi['user_id']); ?>" class="form-control" required>
+                                <label for="user_id" class="form-label">Nama Pengguna</label>
+                                <select name="user_id" class="form-select" required>
+                                    <?php foreach ($users as $user): ?>
+                                        <option value="<?= $user['id_users'] ?>" <?= $user['id_users'] == $reservasi['user_id'] ? 'selected' : '' ?>><?= htmlspecialchars($user['nama']) ?></option>
+                                    <?php endforeach; ?>
+                                </select>
                             </div>
                             <div class="mb-3">
-                                <label for="destination_id" class="form-label">ID Destinasi</label>
-                                <input type="number" name="destination_id" value="<?php echo htmlspecialchars($reservasi['destination_id']); ?>" class="form-control" required>
+                                <label for="destination_id" class="form-label">Nama Destinasi</label>
+                                <select name="destination_id" class="form-select" required>
+                                    <?php foreach ($destinations as $destination): ?>
+                                        <option value="<?= $destination['id_destinasi'] ?>" <?= $destination['id_destinasi'] == $reservasi['destination_id'] ? 'selected' : '' ?>><?= htmlspecialchars($destination['nama_destinasi']) ?></option>
+                                    <?php endforeach; ?>
+                                </select>
                             </div>
                             <div class="mb-3">
                                 <label for="tgl_reservasi" class="form-label">Tanggal Reservasi</label>

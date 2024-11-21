@@ -1,4 +1,3 @@
-<!-- app/views/reservations/add.php -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,12 +17,22 @@
                     <div class="card-body">
                         <form action="/reservasi/store" method="POST">
                             <div class="mb-3">
-                                <label for="user_id" class="form-label">ID Pengguna</label>
-                                <input type="number" name="user_id" class="form-control" required>
+                                <label for="user_id" class="form-label">Nama Pengguna</label>
+                                <select name="user_id" class="form-select" required>
+                                    <option value="">Pilih Pengguna</option>
+                                    <?php foreach ($users as $user): ?>
+                                        <option value="<?= $user['id_users'] ?>"><?= htmlspecialchars($user['nama']) ?></option>
+                                    <?php endforeach; ?>
+                                </select>
                             </div>
                             <div class="mb-3">
-                                <label for="destination_id" class="form-label">ID Destinasi</label>
-                                <input type="number" name="destination_id" class="form-control" required>
+                                <label for="destination_id" class="form-label">Nama Destinasi</label>
+                                <select name="destination_id" class="form-select" required>
+                                    <option value="">Pilih Destinasi</option>
+                                    <?php foreach ($destinations as $destination): ?>
+                                        <option value="<?= $destination['id_destinasi'] ?>"><?= htmlspecialchars($destination['nama_destinasi']) ?></option>
+                                    <?php endforeach; ?>
+                                </select>
                             </div>
                             <div class="mb-3">
                                 <label for="tgl_reservasi" class="form-label">Tanggal Reservasi</label>
@@ -31,10 +40,10 @@
                             </div>
                             <div class="mb-3">
                                 <label for="status_pembayaran" class="form-label">Status Pembayaran</label>
-                                <select name="status_pemb ayaran" class="form-select">
+                                <select name="status_pembayaran" class="form-select">
                                     <option value="Pending">Pending</option>
                                     <option value="Lunas">Lunas</option>
-                                    <option value="Dibatalkan">Dibatalkan</option>
+                                    <option value="D ibatalkan">Dibatalkan</option>
                                 </select>
                             </div>
                             <button type="submit" class="btn btn-success">Simpan</button>

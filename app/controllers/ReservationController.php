@@ -1,26 +1,30 @@
 <?php
-// app/controllers/ReservationController.php
 require_once '../app/models/Reservation.php';
+require_once '../app/models/User.php';
+require_once '../app/models/Destination.php';
 
 class ReservationController {
     private $reservasiModel;
+    private $userModel;
+    private $destinationModel;
 
     public function __construct() {
         $this->reservasiModel = new Reservation();
+        $this->userModel = new User();
+        $this->destinationModel = new Destination();
     }
 
-    // Menampilkan semua reservasi
     public function index() {
         $reservasi1 = $this->reservasiModel->getAllReservation();
         require_once '../app/views/reservations/index.php';
     }
 
-    // Menampilkan form untuk menambah reservasi
     public function create() {
+        $users = $this->userModel->getAllUsers();
+        $destinations = $this->destinationModel->getAllDestinations();
         require_once '../app/views/reservations/add.php';
     }
 
-    // Menyimpan reservasi baru
     public function store() {
         $user_id = $_POST['user_id'];
         $destination_id = $_POST['destination_id'];
@@ -30,13 +34,13 @@ class ReservationController {
         header('Location: /reservasi/index');
     }
 
-    // Menampilkan form untuk mengedit reservasi
     public function edit($reservation_id) {
         $reservasi = $this->reservasiModel->find($reservation_id);
+        $users = $this->userModel->getAllUsers();
+        $destinations = $this->destinationModel->getAllDestinations();
         require_once '../app/views/reservations/edit.php';
     }
 
-    // Mengupdate reservasi
     public function update($reservation_id) {
         $data = [
             'user_id' => $_POST['user_id'],
@@ -48,7 +52,6 @@ class ReservationController {
         header("Location: /reservasi/index");
     }
 
-    // Menghapus reservasi
     public function delete($reservation_id) {
         $this->reservasiModel->delete($reservation_id);
         header("Location: /reservasi/index");
