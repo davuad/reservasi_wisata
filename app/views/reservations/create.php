@@ -1,13 +1,7 @@
 <!-- app/views/reservations/create.php -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Reservasi Baru</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+<?php
+require_once __DIR__ . '/../template/header.php';
+?>
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-8">
@@ -18,12 +12,21 @@
                     <div class="card-body">
                         <form action="/reservasi/store" method="POST">
                             <div class="mb-3">
-                                <label for="user_id" class="form-label">ID Pengguna</label>
-                                <input type="number" name="user_id" class="form-control" required>
+                                <label for="user_id" class="form-label">Pilih User:</label>
+                                 <select name="user_id" id="user_id" required>
+                                    <option value="">-- Pilih User --</option>
+                                    <?php foreach ($users as $user): ?>
+                                        <option value="<?= htmlspecialchars($user['id_users']) ?>"><?= htmlspecialchars($user['nama']) ?></option>
+                                    <?php endforeach; ?>
+                                </select>
                             </div>
                             <div class="mb-3">
-                                <label for="destination_id" class="form-label">ID Destinasi</label>
-                                <input type="number" name="destination_id" class="form-control" required>
+                                <select name="destination_id" id="destination_id" required>
+                                    <option value="">-- Pilih Destinasi --</option>
+                                    <?php foreach ($destinasi as $destination): ?>
+                                        <option value="<?= htmlspecialchars($destination['id_destinasi']) ?>"><?= htmlspecialchars($destination['nama_destinasi']) ?></option>
+                                    <?php endforeach; ?>
+                                </select>
                             </div>
                             <div class="mb-3">
                                 <label for="tgl_reservasi" class="form-label">Tanggal Reservasi</label>
@@ -45,6 +48,6 @@
             </div>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<?php
+require_once __DIR__ . '/../template/footer.php';
+?>

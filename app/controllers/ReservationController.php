@@ -1,12 +1,18 @@
 <?php
 // app/controllers/ReservationController.php
 require_once '../app/models/Reservation.php';
+require_once '../app/models/Destination.php';
+require_once '../app/models/User.php';
 
 class ReservationController {
     private $reservasiModel;
+    private $destinasiModel;
+    private $userModel;
 
     public function __construct() {
         $this->reservasiModel = new Reservation();
+        $this->destinasiModel = new Destinasi();
+        $this->userModel = new User();
     }
 
     public function index() {
@@ -15,6 +21,8 @@ class ReservationController {
     }
 
     public function create() {
+        $users = $this->userModel->getAllUsers();
+        $destinasi = $this->destinasiModel->getAllDestinasi();
         require_once '../app/views/reservations/create.php';
     }
 
@@ -29,6 +37,8 @@ class ReservationController {
 
     public function edit($reservation_id) {
         $reservasi = $this->reservasiModel->find($reservation_id); 
+        $users = $this->userModel->getAllUsers();
+        $destinasi = $this->destinasiModel->getAllDestinasi();
         require_once '../app/views/reservations/edit.php';
     }
 

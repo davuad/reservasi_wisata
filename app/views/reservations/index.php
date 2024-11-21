@@ -1,13 +1,7 @@
 <!-- app/views/reservations/index.php -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Reservasi</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+<?php
+require_once __DIR__ . '/../template/header.php';
+?>
     <div class="container mt-5">
         <h2 class="mb-4">Data Reservasi</h2>
         <a href="/reservasi/create" class="btn btn-primary mb-3">Tambah Reservasi Baru</a>
@@ -17,8 +11,8 @@
                     <tr>
                         <th>NO</th>
                         <th>ID Reservasi</th>
-                        <th>ID User</th>
-                        <th>ID Destinasi</th>
+                        <th>Pengguna</th>
+                        <th>Destinasi</th>
                         <th>Tanggal Reservasi</th>
                         <th>Status Pembayaran</th>
                         <th>Aksi</th>
@@ -30,8 +24,8 @@
                         <tr>
                             <td><?= $no++; ?></td>
                             <td><?= htmlspecialchars($reservasi['reservation_id']) ?></td>
-                            <td><?= htmlspecialchars($reservasi['user_id']) ?></td>
-                            <td><?= htmlspecialchars($reservasi['destination_id']) ?></td>
+                            <td><?= htmlspecialchars($reservasi['user_name']) ?></td>
+                            <td><?= htmlspecialchars($reservasi['destination_name']) ?></td>
                             <td><?= htmlspecialchars($reservasi['tgl_reservasi']) ?></td>
                             <td><?= htmlspecialchars($reservasi['status_pembayaran']) ?></td>
                             <td>
@@ -46,6 +40,6 @@
             </table>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<?php
+require_once __DIR__ . '/../template/footer.php';
+?>

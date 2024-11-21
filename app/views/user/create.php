@@ -1,26 +1,7 @@
 <!-- app/views/user/create.php -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tambah Pengguna Baru</title>
-    <!-- Link ke file CSS Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Kustom CSS untuk tombol -->
-    <style>
-        .btn-custom-blue {
-            background-color: #007bff; /* Warna biru custom */
-            color: white;
-        }
-        .btn-custom-blue:hover {
-            background-color: #0056b3; /* Biru lebih gelap saat hover */
-            color: white;
-        }
-    </style>
-</head>
-<body>
+<?php
+require_once __DIR__ . '/../template/header.php';
+?>
 
 <div class="container mt-5">
     <!-- Card untuk Form -->
@@ -56,7 +37,6 @@
     </div>
 </div>
 
-<!-- Link ke file JavaScript Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<?php
+require_once __DIR__ . '/../template/footer.php';
+?>
