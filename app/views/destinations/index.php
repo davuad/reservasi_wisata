@@ -2,8 +2,8 @@
 <?php
 require_once __DIR__ . '/../template/header.php';
 ?>
-    <div class="container mt-5">
-        <h2 class="mb-4">Data Destinasi</h2>
+    <div class="container mt-5 p-4" style="background-color: #cee0e6;">
+        <h2 class="mb-4 text-center">Data Destinasi</h2>
         <a href="/destinasi/create" class="btn btn-primary mb-3">Tambah Destinasi Baru</a>
         <div class="table-responsive">
             <table class="table table-striped table-bordered">
