@@ -1,9 +1,9 @@
 <!-- app/views/reservations/index.php -->
 <?php
 require_once __DIR__ . '/../template/header.php';
-?>
-    <div class="container mt-3 my-5">
-        <h2 class="mb-4 text-center">Data Reservasi</h2>
+?> 
+    <div class="container my-4 p-5" style="background-color: #93aec1;">
+        <h2 class="mb-3 text-center">Data Reservasi</h2>
         <a href="/reservasi/create" class="btn btn-primary mb-3">Tambah Reservasi Baru</a>
         <div class="table-responsive">
             <table class="table table-striped table-bordered">

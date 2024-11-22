@@ -3,8 +3,8 @@
 require_once __DIR__ . '/../template/header.php';
 ?>
 
-<div class="container mt-5">
-    <h2 class="mb-4">Daftar Pengguna</h2>
+<div class="container mt-3 py-3 px-5" style="background-color: #c6b4d8">
+    <h2 class="mb-3 text-center">Daftar Pengguna</h2>
 
     <a href="/user/create" class="btn btn-primary mb-4">Tambah Pengguna Baru</a>
 
