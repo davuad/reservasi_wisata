@@ -1,10 +1,10 @@
 <?php
 // config/database.php
 class Database {
-    private $host = '160.19.166.42';
-    private $db_name = '2D_klp5';
-    private $username = '2D_klp5';
-    private $password = '1S)bMhlYR1rHfrfd';
+    private $host = 'localhost';
+    private $db_name = 'wisata';
+    private $username = 'root';
+    private $password = '';
     private $conn;
 
     public function connect() {
@@ -18,3 +18,4 @@ class Database {
         return $this->conn;
     }
 }
+?>
