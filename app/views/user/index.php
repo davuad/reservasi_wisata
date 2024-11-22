@@ -1,17 +1,10 @@
 <!-- app/views/user/index.php -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Pengguna</title>
-    <!-- Link ke file CSS Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+<?php
+require_once __DIR__ . '/../template/header.php';
+?>
 
-<div class="container mt-5">
-    <h2 class="mb-4">Daftar Pengguna</h2>
+<div class="container mt-3 py-3 px-5" style="background-color: #c6b4d8">
+    <h2 class="mb-3 text-center">Daftar Pengguna</h2>
 
     <a href="/user/create" class="btn btn-primary mb-4">Tambah Pengguna Baru</a>
 
@@ -41,7 +34,6 @@
     </table>
 </div>
 
-<!-- Link ke file JavaScript Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<<?php
+require_once __DIR__ . '/../template/footer.php';
+?>
