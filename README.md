@@ -12,7 +12,9 @@ Pada sistem ini, terdapat 3 table yang terdiri dari table users (nama, email, no
 
 ## Database
 pada sistem ini, kami menggunakan database mysql yang sudah kami lampirkan database nya di repository. Apabila ingin menggunakan database local dengan format
+```sh
 private $host = '160.19.166.42'
 private $ussername = '2D_klp5'
 private $db_name = '2D_klp5'
 private $password = '1S)bMhlYR1rHfrfd'
+```
