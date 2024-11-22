@@ -26,7 +26,7 @@ class Reservation {
                                       VALUES (:user_id, :destination_id, :tgl_reservasi, :status_pembayaran)");
         $query->bindParam(':user_id', $user_id);
         $query->bindParam(':destination_id', $destination_id);
-        $query->bindParam(':tgl_reservasi ', $tgl_reservasi);
+        $query->bindParam(':tgl_reservasi', $tgl_reservasi);
         $query->bindParam(':status_pembayaran', $status_pembayaran);
         return $query->execute();
     }

@@ -25,7 +25,7 @@ require_once __DIR__ . '/../template/header.php';
                             <td><?= htmlspecialchars($destinasi['nama_destinasi']) ?></td>
                             <td><?= htmlspecialchars($destinasi['lokasi']) ?></td>
                             <td><?= htmlspecialchars($destinasi['deskripsi']) ?></td>
-                            <td>Rp<?= number_format(htmlspecialchars($destinasi['harga_tiket']), 0, ',', '.') ?></td>
+                            <td>Rp. <?= number_format(htmlspecialchars($destinasi['harga_tiket']), 0, ',', '.') ?></td>
                             <td>
                                 <a href="/destinasi/edit/<?php echo $destinasi['id_destinasi']; ?>" class="btn btn-warning btn-sm">Edit</a>
                                 <a href="/destinasi/delete/<?php echo $destinasi['id_destinasi']; ?>" 
