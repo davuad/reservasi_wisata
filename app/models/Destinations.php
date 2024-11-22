@@ -49,4 +49,9 @@ class Destinasi {
         $stmt->bindParam(':id_destinasi', $id_destinasi);
         return $stmt->execute();
     }
+
+    public function getIdNama() {
+        $query = $this->db->query("SELECT id_destinasi, nama_destinasi FROM destinations");
+        return $query->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

@@ -1,15 +1,9 @@
 <!-- app/views/destinations/index.php -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Destinasi</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
-    <div class="container mt-5">
-        <h2 class="mb-4">Data Destinasi</h2>
+<?php
+require_once __DIR__ . '/../template/header.php';
+?>
+    <div class="container mt-5 p-4" style="background-color: #cee0e6;">
+        <h2 class="mb-4 text-center">Data Destinasi</h2>
         <a href="/destinasi/create" class="btn btn-primary mb-3">Tambah Destinasi Baru</a>
         <div class="table-responsive">
             <table class="table table-striped table-bordered">
@@ -31,7 +25,7 @@
                             <td><?= htmlspecialchars($destinasi['nama_destinasi']) ?></td>
                             <td><?= htmlspecialchars($destinasi['lokasi']) ?></td>
                             <td><?= htmlspecialchars($destinasi['deskripsi']) ?></td>
-                            <td>Rp<?= number_format(htmlspecialchars($destinasi['harga_tiket']), 0, ',', '.') ?></td>
+                            <td>Rp. <?= number_format(htmlspecialchars($destinasi['harga_tiket']), 0, ',', '.') ?></td>
                             <td>
                                 <a href="/destinasi/edit/<?php echo $destinasi['id_destinasi']; ?>" class="btn btn-warning btn-sm">Edit</a>
                                 <a href="/destinasi/delete/<?php echo $destinasi['id_destinasi']; ?>" 
@@ -44,6 +38,6 @@
             </table>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+<?php
+require_once __DIR__ . '/../template/footer.php';
+?>
